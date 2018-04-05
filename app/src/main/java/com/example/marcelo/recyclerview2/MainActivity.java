@@ -31,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
         imageURLs.add("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Amsterdam_sights.jpg/800px-Amsterdam_sights.jpg");
         mNames.add("Amsterdam");
 
-        imageURLs.add("https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Flag_of_Estonia.svg/990px-Flag_of_Estonia.svg.png");
-        mNames.add("Estonia ");
+        imageURLs.add("https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Tln3.jpg/320px-Tln3.jpg");
+        mNames.add("Tallinn");
 
         imageURLs.add("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/ISS020-E-25198.JPG/1024px-ISS020-E-25198.JPG");
         mNames.add("Fernando de Noronha");
@@ -41,13 +41,13 @@ public class MainActivity extends AppCompatActivity {
         mNames.add("Diamantina");
 
         imageURLs.add("https://upload.wikimedia.org/wikipedia/commons/3/34/Berlin_Montage_2016.png");
-        mNames.add("Berlin");
+        mNames.add("Berlim");
 
         imageURLs.add("https://upload.wikimedia.org/wikipedia/commons/0/05/Paris_montage_2013.jpg");
         mNames.add("Paris");
 
         imageURLs.add("https://upload.wikimedia.org/wikipedia/commons/b/bf/Tokyo_Montage_2015.jpg");
-        mNames.add("Tokio");
+        mNames.add("Tóquio");
 
         initRecyclerView();
     }
