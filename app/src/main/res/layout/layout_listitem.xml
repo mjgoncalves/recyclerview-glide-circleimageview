@@ -10,8 +10,9 @@
         android:id="@+id/circleimage"
         android:layout_width="80dp"
         android:layout_height="80dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
-        android:src="@mipmap/ic_launcher"/>
+        android:src="@mipmap/ic_launcher" />
 
     <TextView
         android:id="@+id/imageName"
