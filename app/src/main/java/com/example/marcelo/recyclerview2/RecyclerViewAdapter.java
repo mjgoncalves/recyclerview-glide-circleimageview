@@ -18,12 +18,12 @@ import java.util.ArrayList;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>{
-    private static final String TAG = "RecyclerViewAdapter";
-    ArrayList<String> mImageNames = new ArrayList<>();
-    ArrayList<String> mImages = new ArrayList<>();
-    Context context;
 
-    public RecyclerViewAdapter(Context context, ArrayList<String> mImageNames, ArrayList<String> mImages) {
+    private Context context;
+    private ArrayList<String> mImageNames;
+    private ArrayList<String> mImages;
+
+    RecyclerViewAdapter(Context context, ArrayList<String> mImageNames, ArrayList<String> mImages) {
         this.mImageNames = mImageNames;
         this.mImages = mImages;
         this.context = context;
@@ -32,32 +32,25 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        // método que cria o layout
+
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.layout_listitem, parent, false);
-        //
-        ViewHolder holder = new ViewHolder(view);
-        return holder;
 
-        // esse método recicla o viewholder, ele apenas coloca os itens onde eles
-        // devem ficar. A estrutura é sempre a mesma para toda recyclerview.
+        return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
-        // esse é o método que varia dependendo do resultado que queremos
-        // é o método mais importante
-        Log.d(TAG, "onBindViewHolder: called");
-        Glide.with(context) // pega o contexto
-                .asBitmap() // informa que a gente quer o res com bitmap
-                .load(mImages.get(position)) // informa de onde a imagem virá...
-                .into(holder.image); // e para onde ela vai.
+    public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
+
+        Glide.with(context)
+                .asBitmap()
+                .load(mImages.get(position))
+                .into(holder.image);
         holder.imageName.setText(mImageNames.get(position));
         holder.parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d(TAG, "onClick: " + mImageNames.get(position));
-                Toast.makeText(context, mImageNames.get(position), Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, mImageNames.get(holder.getAdapterPosition()), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -69,12 +62,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return mImageNames.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    class ViewHolder extends RecyclerView.ViewHolder{
         CircleImageView image;
         TextView imageName;
         LinearLayout parentLayout;
 
-        public ViewHolder(View itemView) {
+        ViewHolder(View itemView) {
             super(itemView);
 
             image = itemView.findViewById(R.id.circleimage);
