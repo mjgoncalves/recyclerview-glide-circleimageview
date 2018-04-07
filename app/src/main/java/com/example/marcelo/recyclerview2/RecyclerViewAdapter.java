@@ -1,6 +1,7 @@
 package com.example.marcelo.recyclerview2;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -40,7 +41,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
 
         Glide.with(context)
                 .asBitmap()
@@ -51,6 +52,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             @Override
             public void onClick(View view) {
                 Toast.makeText(context, mImageNames.get(holder.getAdapterPosition()), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(context, GalleryActivity.class);
+                intent.putExtra("IMAGE_URL", mImages.get(position));
+                intent.putExtra("IMAGE_NAME", mImageNames.get(position));
+                context.startActivity(intent);
+
             }
         });
 
