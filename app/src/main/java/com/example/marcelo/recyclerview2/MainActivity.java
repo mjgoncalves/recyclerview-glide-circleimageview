@@ -2,6 +2,7 @@ package com.example.marcelo.recyclerview2;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -28,25 +29,25 @@ public class MainActivity extends AppCompatActivity {
 
     private void initImageBitmaps(){
 
-        imageURLs.add("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Amsterdam_sights.jpg/800px-Amsterdam_sights.jpg");
+        imageURLs.add("https://i1.wp.com/www.eurodicas.com.br/wp-content/uploads/2017/10/amsterdam.jpg?resize=740,480");
         mNames.add("Amsterdam");
 
-        imageURLs.add("https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Tln3.jpg/320px-Tln3.jpg");
+        imageURLs.add("https://www.siliconluxembourg.lu/wp-content/uploads/2017/05/Tallinn_Startups.jpg.pagespeed.ce.pZfiikAuLb.jpg");
         mNames.add("Tallinn");
 
-        imageURLs.add("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/ISS020-E-25198.JPG/1024px-ISS020-E-25198.JPG");
+        imageURLs.add("https://upload.wikimedia.org/wikipedia/commons/1/1d/Fernando_de_Noronha_-_Pernambuco_-_Brasil%285%29.jpg");
         mNames.add("Fernando de Noronha");
 
-        imageURLs.add("https://upload.wikimedia.org/wikipedia/commons/f/f5/Passadi%C3%A7o_da_Gl%C3%B3ria.jpg");
+        imageURLs.add("http://ouropretotravel.com/wp-content/uploads/photo-gallery/passeios-diamantina.jpg");
         mNames.add("Diamantina");
 
-        imageURLs.add("https://upload.wikimedia.org/wikipedia/commons/3/34/Berlin_Montage_2016.png");
+        imageURLs.add("https://cache-graphicslib.viator.com/graphicslib/thumbs674x446/5623/SITours/skip-the-line-dinner-atop-the-berlin-tv-tower-in-berlin-122496.jpg");
         mNames.add("Berlim");
 
-        imageURLs.add("https://upload.wikimedia.org/wikipedia/commons/0/05/Paris_montage_2013.jpg");
+        imageURLs.add("https://aventurescu.ro/wp-content/uploads/2015/08/paris-820x390.jpg");
         mNames.add("Paris");
 
-        imageURLs.add("https://upload.wikimedia.org/wikipedia/commons/b/bf/Tokyo_Montage_2015.jpg");
+        imageURLs.add("https://ci-prod.imgix.net/upload/galeriadeimagens/00206964.jpg?w=555&h=416&fit=crop&auto=compress%2Cformat");
         mNames.add("Tóquio");
 
         initRecyclerView();
@@ -56,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, mNames, imageURLs);
         recyclerView.setAdapter(adapter);
+
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
 

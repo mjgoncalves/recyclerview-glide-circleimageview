@@ -31,12 +31,13 @@ public class GalleryActivity extends AppCompatActivity {
     }
     private void setImage(String imageURL, String imageName){
 
-        TextView name = findViewById(R.id.imageDescription);
-        name.setText(imageName);
         ImageView imageView = findViewById(R.id.image);
         Glide.with(this)
                 .asBitmap()
                 .load(imageURL)
                 .into(imageView);
+
+        TextView name = findViewById(R.id.imageDescription);
+        name.setText(imageName);
     }
 }
