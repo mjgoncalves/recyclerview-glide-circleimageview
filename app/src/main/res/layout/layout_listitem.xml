@@ -10,9 +10,8 @@
         android:id="@+id/circleimage"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:src="@mipmap/ic_launcher" />
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"/>
 
     <TextView
         android:id="@+id/imageName"
@@ -20,13 +19,6 @@
         android:layout_height="80dp"
         android:layout_marginTop="20dp"
         android:gravity="center"
-        android:text="canada"
-        android:textSize="30sp"
-        android:textStyle="bold" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray"/>
+        android:textSize="30sp"/>
 
 </LinearLayout>
