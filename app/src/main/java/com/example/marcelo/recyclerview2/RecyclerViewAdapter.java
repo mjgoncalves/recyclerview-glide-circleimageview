@@ -11,15 +11,17 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import java.util.ArrayList;
+import java.util.List;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>{
 
     private Context context;
-    private ArrayList<String> mImageNames;
-    private ArrayList<String> mImages;
+    private List<String> mImageNames;
+    private List<String> mImages;
 
-    RecyclerViewAdapter(Context context, ArrayList<String> mImageNames, ArrayList<String> mImages) {
+    RecyclerViewAdapter(Context context, List<String> mImageNames, List<String> mImages) {
         this.mImageNames = mImageNames;
         this.mImages = mImages;
         this.context = context;
